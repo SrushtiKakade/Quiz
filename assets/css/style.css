@@ -2,6 +2,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #212529;
+  background-color: #0e0137;
 }
 
 a {
@@ -358,11 +359,78 @@ h6,
   color: #FFF;
 }
 
-#hero h2 {
-  color: #ffffff;
-  margin: 20px 0 0 0;
-  font-size: 24px;
+#hero p{
+  max-width: 100%;
+  position: relative;
+  font-size: 3.7vw;
+  font-weight: 1000;
+  color: #252839;
+  -webkit-text-stroke: 0.3vw #383d52;
+  text-transform: uppercase;
 }
+#hero p::before
+{
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20%;
+  height: 100%;
+  color: #01e5fe;
+  -webkit-text-stroke: 0.1vw #383d52;
+  border-right: -1px solid #01e5fe;
+  overflow: hidden;
+  animation: animate 6s linear infinite;
+}
+@keyframes animate
+{
+  0%,10%,100%
+  {
+      width: 0;
+  }
+  70%,90%
+  {
+      width: 100%;
+  }
+}
+
+#hero h1 {
+	font-size: 7.5em;
+	@media (max-width: 768px) {
+		font-size: 1.3em;
+	}
+}
+
+.text-shadow {
+	font-style: italic;
+	text-transform: uppercase;
+	color: transparent;
+	-webkit-text-stroke: #fff;
+	-webkit-text-stroke-width: 1px;
+	text-shadow: 2px 2px 10px #2962ff;
+	transition: all 0.5s ease-in-out;
+	text-align: center;
+	letter-spacing: 0.2em;
+	animation: flicker 0.5s ease-in-out infinite alternate;
+}
+
+.tags small {
+	@media (max-width: 768px) {
+		font-size: 0.5em;
+	}
+}
+
+@keyframes flicker {
+	0% {
+		opacity: 0.5;
+		text-shadow: 2px 2px 10px #2962ff;
+	}
+	100% {
+		opacity: 1;
+		text-shadow: 2px 2px 20px #2962ff;
+	}
+}
+
 
 #hero .btn-get-started {
   margin: 20px 0 0 0;
@@ -376,11 +444,11 @@ h6,
   transition: 0.5s;
   margin-top: 30px;
   color: #fff;
-  background: #4046ed;
+  background: #f015b2;
 }
 
 #hero .btn-get-started:hover {
-  background: #1017f5;
+  background: #3b9bf5;
 }
 
 #hero .animated {
@@ -908,14 +976,14 @@ form .user-details .input-box{
 form .input-box span.details{
   color: #faeded;
   display: block;
-  font-weight: 500;
+  font-weight: 600;
   font-size: medium;
   margin-bottom: 5px;
 }
 
 .user-details .input-box input{
-  color: #f7e8e8;
-  background: #373841;
+  color: #f4eded;
+  background: #72747b;
   height: 40px;
   width: 100%;
   outline: none;
@@ -927,9 +995,14 @@ form .input-box span.details{
   transition: all 0.3s ease;
 }
 
+.user-details .input-box ::placeholder
+{
+  color: #e6d7d7;
+}
+
 .user-details .input-box select{
-  color: #f7e8e8;
-  background: #373841;
+  color: #f4eded;
+  background: #72747b;
   height: 40px;
   width: 100%;
   outline: none;
@@ -1048,7 +1121,7 @@ form .user-details .input-box{
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: #3851f1;
+  background: #051dbb;
   padding: 0 0 30px 0;
   color: #f8f8f9;
   font-size: 14px;
@@ -1110,7 +1183,7 @@ form .user-details .input-box{
 
 #footer .footer-top {
   padding: 60px 0 30px 0;
-  background: #434184;
+  background: #353638;
 }
 
 #footer .footer-top .footer-contact {
